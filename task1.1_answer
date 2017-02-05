@@ -1,11 +1,11 @@
-1. $ git init
+1. first_repo$ git init
 Initialized empty Git repository in /home/jatstudio/Perl/first_repo/.git/
 
-2. $ git config --global user.name "Федоров Дмитрий"
+2. first_repo$ git config --global user.name "Федоров Дмитрий"
 
-   $ git config --global user.email "fedorov@reg.ru"
+   first_repo$ git config --global user.email "fedorov@reg.ru"
 
-   $ git config --list
+   first_repo$ git config --list
 user.name=Федоров Дмитрий
 user.email=fedorov@reg.ru
 core.repositoryformatversion=0
@@ -13,11 +13,11 @@ core.filemode=true
 core.bare=false
 core.logallrefupdates=true
 
-3. $ git remote add origin https://github.com/fedorovregru/first-repo.git
+3. first_repo$ git remote add origin https://github.com/fedorovregru/first-repo.git
 
-4. $ vim task1.1
+4. first_repo$ vim task1.1
 
-   $ git status
+   first_repo$ git status
 On branch master
 
 Initial commit
@@ -29,9 +29,9 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-   $ vim .gitignore
+   first_repo$ vim .gitignore
 
-   $ git status
+   first_repo$ git status
 On branch master
 
 Initial commit
@@ -43,17 +43,17 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-5. $ vim task1.1_answer
+5. first_repo$ vim task1.1_answer
 
-   $ git add task1.1_answer .gitignore
+   first_repo$ git add task1.1_answer .gitignore
 
-   $ git commit -m "Start commit."
+   first_repo$ git commit -m "Start commit."
 [master (root-commit) 1f84917] Start commit.
  2 files changed, 43 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 task1.1_answer
 
-   $ git push origin master
+   first_repo$ git push origin master
 Username for 'https://github.com': fedorovregru
 Password for 'https://fedorovregru@github.com': 
 Counting objects: 4, done.
@@ -64,13 +64,21 @@ Total 4 (delta 0), reused 0 (delta 0)
 To https://github.com/fedorovregru/first-repo.git
  * [new branch]      master -> master
 
-6. $ vim fileA
+6. Perl$ git clone https://github.com/fedorovregru/first-repo.git second_repo
+Cloning into 'second_repo'...
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+Checking connectivity... done. 
+
+7. second_repo$ vim fileA
    
-   $ vim fileB
+   second_repo$ vim fileB
    
-   $ vim task1.1_answer
+   second_repo$ vim task1.1_answer
    
-   $ git status
+   second_repo$ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes not staged for commit:
@@ -87,9 +95,9 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
    
-   $ git add fileA fileB
+   second_repo$ git add fileA fileB
    
-   $ git status
+   second_repo$ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
@@ -104,13 +112,13 @@ Changes not staged for commit:
 
 	modified:   task1.1_answer
 
-   $ git commit -m "Send new files A and B into first repository."
+   second_repo$ git commit -m "Send new files A and B into first repository."
 [master f3ed86d] Send new files A and B into first repository.
  2 files changed, 2 insertions(+)
  create mode 100644 fileA
  create mode 100644 fileB
 
-   $ git push origin master
+   second_repo$ git push origin master
 Username for 'https://github.com': fedorovregru
 Password for 'https://fedorovregru@github.com': 
 Counting objects: 4, done.
@@ -121,7 +129,7 @@ Total 4 (delta 0), reused 0 (delta 0)
 To https://github.com/fedorovregru/first-repo.git
    1f84917..f3ed86d  master -> master
 
-8. $ git pull origin master
+8. first_repo$ git pull origin master
 remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
@@ -137,7 +145,7 @@ Fast-forward
  create mode 100644 fileA
  create mode 100644 fileB
 
-   $ git diff fileA
+   first_repo$ git diff fileA
 diff --git a/fileA b/fileA
 index 699f1f7..8b8cfbf 100644
 --- a/fileA
@@ -146,6 +154,91 @@ index 699f1f7..8b8cfbf 100644
  some string in file A
 +some second string in file A
 
-   $ git rm fileB
+   first_repo$ git rm fileB
 rm 'fileB'
 
+   first_repo$ git add fileA task1.1_answer 
+
+   first_repo$ git commit -m "remove file B, modified file A and task1.1_answer"
+[master 6fe46ea] remove file B, modified file A and task1.1_answer
+ 3 files changed, 55 insertions(+), 2 deletions(-)
+ delete mode 100644 fileB
+
+   first_repo$ git push origin master
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.30 KiB | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/fedorovregru/first-repo.git
+   f3ed86d..6fe46ea  master -> master
+
+9. first_repo$ git log
+commit 6fe46ea35927aa46414d4f679de42542270b4f3d
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:17:09 2017 +0400
+
+    remove file B, modified file A and task1.1_answer
+
+commit f3ed86d3568f4ccd1a63370ce5bd6477a8df9fee
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:52:37 2017 +0400
+
+    Send new files A and B into first repository.
+
+commit 1f84917586f5cafe6b16156d7992315848866fda
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:30:10 2017 +0400
+
+    Start commit.
+
+   second_repo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+jatstudio@ubuntu:~/Perl/second_repo$ git log
+commit 15542f11351fff790ff33342c761b361b1b84b5c
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:24:24 2017 +0400
+
+    edit file task1.1_answer
+
+commit f3ed86d3568f4ccd1a63370ce5bd6477a8df9fee
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:52:37 2017 +0400
+
+    Send new files A and B into first repository.
+
+commit 1f84917586f5cafe6b16156d7992315848866fda
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:30:10 2017 +0400
+
+    Start commit.
+
+   second_repo$ git pull origin master
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/fedorovregru/first-repo
+ * branch            master     -> FETCH_HEAD
+   f3ed86d..6fe46ea  master     -> origin/master
+Auto-merging task1.1_answer
+CONFLICT (content): Merge conflict in task1.1_answer
+Removing fileB
+Automatic merge failed; fix conflicts and then commit the result.
+
+   Далее с помощью команд
+   second_repo$ git diff 6fe46ea
+   second_repo$ vim task1.1_answer
+   Привел файл task1.1_answer к "общему знаменателю"
+
+   second_repo$ git add task1.1_answer
+
+   second_repo$ git commit -m "merge first_repo to second repo"
+[master 468c1d7] merge first_repo to second repo
+
+   

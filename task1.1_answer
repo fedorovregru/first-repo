@@ -241,4 +241,56 @@ Automatic merge failed; fix conflicts and then commit the result.
    second_repo$ git commit -m "merge first_repo to second repo"
 [master 468c1d7] merge first_repo to second repo
 
-   
+second_repo$ git add task1.1_answer
+
+   second_repo$ git commit -m "edit task1.1_answer file"
+[master e04c7ff] edit task1.1_answer file
+ 1 file changed, 117 insertions(+), 24 deletions(-)
+jatstudio@ubuntu:~/Perl/second_repo$ git push origin master
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 2.86 KiB | 0 bytes/s, done.
+Total 9 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 2 local objects.
+To https://github.com/fedorovregru/first-repo.git
+   6fe46ea..e04c7ff  master -> master
+
+   first_repo$ git pull origin master
+remote: Counting objects: 9, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 5), reused 9 (delta 5), pack-reused 0
+Unpacking objects: 100% (9/9), done.
+From https://github.com/fedorovregru/first-repo
+ * branch            master     -> FETCH_HEAD
+   6fe46ea..e04c7ff  master     -> origin/master
+Updating 6fe46ea..e04c7ff
+Fast-forward
+ task1.1_answer | 181 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 165 insertions(+), 16 deletions(-)
+
+10. first_repo$ git reset f3ed86d fileB
+Unstaged changes after reset:
+D	fileB
+
+    first_repo$ git commit -m "restore fileB"
+[master 548e3fd] restore fileB
+ 1 file changed, 1 insertion(+)
+ create mode 100644 fileB
+
+    first_repo$ git checkout -- fileB
+
+    first_repo$ git push origin master
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 385 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fedorovregru/first-repo.git
+   e04c7ff..548e3fd  master -> master
+
+11.    

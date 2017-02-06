@@ -476,3 +476,128 @@ Fast-forward
  task1.1_answer | 147 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  2 files changed, 147 insertions(+), 1 deletion(-)
 
+    second_repo$ vim task1.1_answer
+
+    second_repo$ git add task1.1_answer
+
+    second_repo$ git commit -m "master merged with feature1"
+[master 22d990b] master merged with feature1
+ 1 file changed, 38 insertions(+)
+
+    second_repo$ git push origin master
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 579 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/fedorovregru/first-repo.git
+   a714bc8..22d990b  master -> master
+
+15. second_repo$ git checkout feature2
+Switched to branch 'feature2'
+
+    second_repo$ git branch
+* feature2
+  master
+
+    second_repo$ git branch -a
+* feature2
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/feature1
+  remotes/origin/master
+
+    second_repo$ vim task1.1_answer
+
+    second_repo$ git add task1.1_answer
+
+    second_repo$ git commit -m "first commit on feature2"
+[feature2 8a5182e] first commit on feature2
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+    second_repo$ git push origin feature2
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 450 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/fedorovregru/first-repo.git
+ * [new branch]      feature2 -> feature2
+
+16. first_repo$ git branch
+* feature1
+  master
+
+    first_repo$ git pull origin feature1
+From https://github.com/fedorovregru/first-repo
+ * branch            feature1   -> FETCH_HEAD
+Already up-to-date.
+
+    first_repo$ git checkout master
+Switched to branch 'master'
+
+    first_repo$ git pull origin master
+From https://github.com/fedorovregru/first-repo
+ * branch            master     -> FETCH_HEAD
+Updating a714bc8..22d990b
+Fast-forward
+ fileB          |   1 +
+ task1.1_answer | 185 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 185 insertions(+), 1 deletion(-)
+
+    first_repo$ git log -3
+commit 22d990b683668e609ca0dafae650f3eef590836d
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Mon Feb 6 19:51:02 2017 +0400
+
+    master merged with feature1
+
+commit b6eee4c559a4d9c5b0c254aec79dbe1423451b80
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Mon Feb 6 19:26:35 2017 +0400
+
+    first commit on feature1
+
+commit a714bc865c9ab1c1247cef21d5e262abbbd53138
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 20:07:15 2017 +0400
+
+    add 10 task into task1.1_answer file
+
+
+    first_repo$ git reset a714bc
+Unstaged changes after reset:
+M	fileB
+M	task1.1_answer
+
+    first_repo$ git add fileB task1.1_answer
+
+    first_repo$ git commit -m "master reset before master merged with feature1"
+[master 643e6f7] master reset before master merged with feature1
+ 2 files changed, 185 insertions(+), 1 deletion(-)
+
+    first_repo$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/fedorovregru/first-repo
+ * [new branch]      feature2   -> origin/feature2
+
+    first_repo$ git merge origin/feature2
+Auto-merging task1.1_answer
+CONFLICT (content): Merge conflict in task1.1_answer
+Automatic merge failed; fix conflicts and then commit the result.
+
+    first_repo$ vim task1.1_answer
+
+    first_repo$ git add task1.1_answer
+
+    first_repo$ git commit
+[master ce3bf19] Merge remote-tracking branch 'origin/feature2'

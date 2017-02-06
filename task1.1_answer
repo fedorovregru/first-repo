@@ -601,3 +601,26 @@ Automatic merge failed; fix conflicts and then commit the result.
 
     first_repo$ git commit
 [master ce3bf19] Merge remote-tracking branch 'origin/feature2'
+
+    first_repo$ vim task1.1_answer
+
+    first_repo$ git add task1.1_answer
+
+    first_repo$ git commit -m "added 1-16 answers into file task1.1_answer"
+[master 9cc2ecf] added 1-16 answers into file task1.1_answer
+ 1 file changed, 125 insertions(+)
+
+17. first_repo$ gitk --all
+
+    first_repo$ git branch -D feature1
+Deleted branch feature1 (was b6eee4c).
+
+    first_repo$ git push origin :feature1
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+To https://github.com/fedorovregru/first-repo.git
+ - [deleted]         feature1
+
+18. first_repo$ vim task1.1_answer
+
+    first_repo$ git tag -a v1.0 -m "git_repo v1.0"

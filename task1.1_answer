@@ -439,3 +439,41 @@ Password for 'https://fedorovregru@github.com':
 Total 0 (delta 0), reused 0 (delta 0)
 To https://github.com/fedorovregru/first-repo.git
  * [new branch]      feature1 -> feature1
+
+    first_repo$ git add fileB task1.1_answer
+
+    first_repo$ git commit -m "first commit on feature1"
+[feature1 9d5f233] first commit on feature1
+ 2 files changed, 147 insertions(+), 1 deletion(-)
+
+    first_repo$ git push origin feature1
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fedorovregru/first-repo.git
+ * [new branch]      feature1 -> feature1
+
+13. second_repo$ git branch
+* master
+
+    second_repo$ git checkout -b feature2
+M	task1.1_answer
+Switched to a new branch 'feature2'
+
+14. second_repo$ git fetch origin
+From https://github.com/fedorovregru/first-repo
+ * [new branch]      feature1   -> origin/feature1
+
+    second_repo$ git checkout master
+M	task1.1_answer
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+    second_repo$ git merge origin/feature1
+Updating a714bc8..b6eee4c
+Fast-forward
+ fileB          |   1 +
+ task1.1_answer | 147 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 147 insertions(+), 1 deletion(-)
+
+    

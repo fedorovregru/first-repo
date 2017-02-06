@@ -293,4 +293,187 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/fedorovregru/first-repo.git
    e04c7ff..548e3fd  master -> master
 
-11.    
+11. first_repo$ vim task1.1_answer
+
+    first_repo$ git add task1.1_answer
+
+    first_repo$ git commit -m "add 10 task into task1.1_answer file"
+[master a714bc8] add 10 task into task1.1_answer file
+ 1 file changed, 53 insertions(+), 1 deletion(-)
+jatstudio@ubuntu:~/Perl/first_repo$ git push origin master
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 822 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/fedorovregru/first-repo.git
+   548e3fd..a714bc8  master -> master
+
+    second_repo$ git pull origin master
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 2), reused 6 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/fedorovregru/first-repo
+ * branch            master     -> FETCH_HEAD
+   e04c7ff..a714bc8  master     -> origin/master
+Updating e04c7ff..a714bc8
+Fast-forward
+ fileB          |  1 +
+ task1.1_answer | 54 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 54 insertions(+), 1 deletion(-)
+ create mode 100644 fileB
+
+    first_repo$ git log
+commit a714bc865c9ab1c1247cef21d5e262abbbd53138
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 20:07:15 2017 +0400
+
+    add 10 task into task1.1_answer file
+
+commit 548e3fd60584c0e3d004d8e548e08c500d0a9dfb
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 19:57:17 2017 +0400
+
+    restore fileB
+
+commit e04c7ff7102aaab5bbca47a9cc1ab2ccca2ccc85
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 19:17:55 2017 +0400
+
+    edit task1.1_answer file
+
+commit 468c1d7910b8066987d43e0368f18827f84a5fd0
+Merge: 15542f1 6fe46ea
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:52:12 2017 +0400
+
+    merge first_repo to second repo
+
+commit 15542f11351fff790ff33342c761b361b1b84b5c
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:24:24 2017 +0400
+
+    edit file task1.1_answer
+
+commit 6fe46ea35927aa46414d4f679de42542270b4f3d
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:17:09 2017 +0400
+
+    remove file B, modified file A and task1.1_answer
+
+commit f3ed86d3568f4ccd1a63370ce5bd6477a8df9fee
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:52:37 2017 +0400
+
+    Send new files A and B into first repository.
+
+commit 1f84917586f5cafe6b16156d7992315848866fda
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:30:10 2017 +0400
+
+    Start commit.
+
+    second_repo$ git log
+commit a714bc865c9ab1c1247cef21d5e262abbbd53138
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 20:07:15 2017 +0400
+
+    add 10 task into task1.1_answer file
+
+commit 548e3fd60584c0e3d004d8e548e08c500d0a9dfb
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 19:57:17 2017 +0400
+
+    restore fileB
+
+commit e04c7ff7102aaab5bbca47a9cc1ab2ccca2ccc85
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 19:17:55 2017 +0400
+
+    edit task1.1_answer file
+
+commit 468c1d7910b8066987d43e0368f18827f84a5fd0
+Merge: 15542f1 6fe46ea
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:52:12 2017 +0400
+
+    merge first_repo to second repo
+
+commit 15542f11351fff790ff33342c761b361b1b84b5c
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:24:24 2017 +0400
+
+    edit file task1.1_answer
+
+commit 6fe46ea35927aa46414d4f679de42542270b4f3d
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 18:17:09 2017 +0400
+
+    remove file B, modified file A and task1.1_answer
+
+commit f3ed86d3568f4ccd1a63370ce5bd6477a8df9fee
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:52:37 2017 +0400
+
+    Send new files A and B into first repository.
+
+commit 1f84917586f5cafe6b16156d7992315848866fda
+Author: Федоров Дмитрий <fedorov@reg.ru>
+Date:   Sun Feb 5 17:30:10 2017 +0400
+
+    Start commit.
+
+12. first_repo$ git checkout -b feature1
+M	task1.1_answer
+Switched to a new branch 'feature1'
+
+    first_repo$ vim fileB
+
+    first_repo$ git push origin feature1
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fedorovregru/first-repo.git
+ * [new branch]      feature1 -> feature1
+
+    first_repo$ git add fileB task1.1_answer
+
+    first_repo$ git commit -m "first commit on feature1"
+[feature1 9d5f233] first commit on feature1
+ 2 files changed, 147 insertions(+), 1 deletion(-)
+
+    first_repo$ git push origin feature1
+Username for 'https://github.com': fedorovregru
+Password for 'https://fedorovregru@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fedorovregru/first-repo.git
+ * [new branch]      feature1 -> feature1
+
+13. second_repo$ git branch
+* master
+
+    second_repo$ git checkout -b feature2
+M	task1.1_answer
+Switched to a new branch 'feature2'
+
+14. second_repo$ git fetch origin
+From https://github.com/fedorovregru/first-repo
+ * [new branch]      feature1   -> origin/feature1
+
+    second_repo$ git checkout master
+M	task1.1_answer
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+    second_repo$ git merge origin/feature1
+Updating a714bc8..b6eee4c
+Fast-forward
+ fileB          |   1 +
+ task1.1_answer | 147 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 147 insertions(+), 1 deletion(-)
+
+    

@@ -293,4 +293,20 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/fedorovregru/first-repo.git
    e04c7ff..548e3fd  master -> master
 
-11.    
+11. 
+
+15. second_repo$ git checkout feature2
+Switched to branch 'feature2'
+
+    second_repo$ git branch
+* feature2
+  master
+
+    second_repo$ git branch -a
+* feature2
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/feature1
+  remotes/origin/master
+
+    second_repo$ vim task1.1_answer
